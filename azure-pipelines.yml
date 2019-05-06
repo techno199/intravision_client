@@ -11,15 +11,14 @@ pool:
   vmImage: 'vs2017-win2016'
 
 steps:
+- script: |
+    npm install -g @angular/cli
+    npm install
 - task: Npm@1
   displayName: 'npm install'
   inputs:
     command: 'install'
-- task: Npm@1
-  displayName: 'npm run azure-build'
-  inputs:
-    command: 'custom'
-    customCommand: 'run azure-build'
+- script: "npm run azure-build"
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'dist'
