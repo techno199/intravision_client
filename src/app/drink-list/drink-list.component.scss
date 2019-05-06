@@ -1,0 +1,16 @@
+.d-l_drink {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0, 0, 0, .08);
+  }
+}
+
+.d-l_wrap {
+  display: flex;
+  flex-flow: column;
+  margin-top: 25px;
+}

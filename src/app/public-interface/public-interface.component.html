@@ -1,0 +1,28 @@
+<div class='p-i_root'>
+  <paper>
+    <div class='p-i_wrap'>
+      <div class='p-i_billing'>
+        <span>Остаток: </span>
+        <span class='p-i_billing_cash'>{{ cash }}</span>
+        <span class='p-i_billing_message'>{{ message }}</span>
+      </div>
+      <coin-list></coin-list>
+      <div class='p-i_drinks'>
+        <drink-list></drink-list>
+      </div>
+      <div class='p-i_footer'>
+        <button (click)='handleCheckout()'>Забрать сдачу</button>
+        <div *ngIf='!isAdmin'>
+          <input 
+            [formControl]='code'
+            placeholder='Код администратора'
+          />
+        </div>
+        <div *ngIf='isAdmin'>
+          <button (click)='handleLogout()'>Выйти</button>
+        </div>
+      </div>
+      
+    </div>
+  </paper>
+</div>

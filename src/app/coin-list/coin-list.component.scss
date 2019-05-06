@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  flex-flow: row wrap;
+}
+.coin-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 72px;
+  width: 148px;
+  padding: 10px;
+  margin: 25px;
+  cursor: pointer;
+  box-shadow: 0 0 4px #999;
+  user-select: none;
+  &:hover {
+    background-color: rgba(0,0,0,.08)
+  }
+  &.coin-button_disabled {
+    cursor: not-allowed;
+  }
+}
+.coin-button_input {
+  margin-bottom: 10px;
+  width: 100%;
+}
+.coin-button_create {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.coin-button_body {
+  display: flex;
+  flex-flow: column;
+}

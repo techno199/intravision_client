@@ -1,0 +1,51 @@
+<paper class='d-l_wrap'>
+  <paper
+    class='d-l_drink'
+    *ngFor='let drink of drinks'
+    (click)='handleDrinkClick(drink)'
+  >
+    <span>
+      {{ drink.name }}
+    </span>
+    <div *ngIf='!isAdmin'> 
+      <span>
+        Цена: {{ drink.price }}
+      </span>
+      <span>
+        Остаток: {{ drink.quantity }}
+      </span>
+    </div>
+    <div *ngIf='isAdmin'>
+      <input
+        (change)='handleQuantityChange(drink, $event)'
+        placeholder='Остаток {{drink.quantity}}'
+      />
+      <input 
+        (change)='handlePriceChange(drink, $event)' 
+        placeholder='Цена: {{drink.price}}'
+      />
+      <button (click)='handleDeleteClick(drink)'>Удалить</button>
+    </div>
+  </paper>
+  <paper 
+    *ngIf='isAdmin'
+    class='d-l_drink'
+    (click)='handleCreateClick'
+  >
+    <input
+      placeholder='Название'
+      [(ngModel)]='newDrink.name'
+    />
+    <input
+      placeholder='Остаток'
+      [(ngModel)]='newDrink.quantity'
+    />
+    <input
+      placeholder='Цена'
+      [(ngModel)]='newDrink.price'
+    />
+    <button (click)='handleCreateClick()'>
+      Создать
+    </button>
+  </paper>
+</paper>

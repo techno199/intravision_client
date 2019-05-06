@@ -1,0 +1,29 @@
+:host {
+  min-height: 100%;
+}
+.p-i_root {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.p-i_wrap {
+  width: 654px;
+}
+.p-i_billing {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  border: 1px solid gray;
+}
+.p-i_billing_cash {
+  flex-grow: 1;
+}
+.p-i_coins {
+  display: flex;
+  justify-content: space-between;
+}
+.p-i_footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}

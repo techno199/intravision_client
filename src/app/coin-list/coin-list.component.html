@@ -1,0 +1,60 @@
+<div
+  *ngFor='let coin of coins'
+  class='coin-button'
+  [class.coin-button_disabled]='coin.isBlocked'
+  (click)='handleCoinClick(coin)'
+>
+  <div 
+    *ngIf='!isAdmin'
+    class='coin-button_body'
+  >
+    <span>Номинал: {{ coin.value }}</span>
+    <span>Остаток монет: {{ coin.quantity }}</span>
+  </div>
+  <div 
+    *ngIf='isAdmin'
+    class='coin-button_body'
+  >
+    <input
+      placeholder='Номинал: {{ coin.value }}'
+      class='coin-button_input'
+      (change)='handleCoinValueChange(coin, $event)'
+    />
+    <input
+      placeholder='Количество: {{ coin.quantity }}'
+      class='coin-button_input'
+      (change)='handleCoinQuantityChange(coin, $event)'
+    />
+    <label>
+      Блокировка
+      <input
+        type='checkbox'
+        [(ngModel)]='coin.isBlocked'
+        (change)='handleBlockChange(coin, $event)'
+      />
+    </label>
+    <button (click)='handleDeleteClick(coin)'>
+      Удалить
+    </button>
+  </div>
+</div>
+<div
+  *ngIf='isAdmin'
+  class='coin-button'
+>
+  <input 
+    class='coin-button_input'
+    placeholder='Номинал'
+    [formControl]='newCoinValue'
+  />
+  <input 
+    class='coin-button_input'
+    placeholder='Количество'
+    [formControl]='newCoinQuantity'
+  />
+  <div class='coin-button_create'>
+    <button (click)='handleCreateCoinClick()'>
+      Создать
+    </button>
+  </div>
+</div>
