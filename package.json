@@ -7,8 +7,7 @@
     "build": "ng build --prod --output-path ../Intravision/wwwroot",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "azure-build": "ng build --prod"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
