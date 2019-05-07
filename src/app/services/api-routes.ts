@@ -4,7 +4,7 @@ export const deviceId = '1';
 // Domain
 let apiDomain = 'https://localhost:5001/api';
 if(environment.production) {
-  apiDomain = '/api';
+  apiDomain = 'https://intravision.azurewebsites.net/api';
 } 
 // Drinks
 export const apiDrinkCrud = apiDomain + '/drinks';
